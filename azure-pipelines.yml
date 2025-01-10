@@ -22,6 +22,7 @@ steps:
     ls -al
     printenv
     npm i
+    npm uninstall browserstack-node-sdk
     npm i "$(downloadSecureFileStep.secureFilePath)"
     npx browserstack-node-sdk --version
     echo "RUNNING TEST"
@@ -30,7 +31,4 @@ steps:
   env:
     BROWSERSTACK_USERNAME: $(BROWSERSTACK_USERNAME)
     BROWSERSTACK_ACCESS_KEY: ${BROWSERSTACK_ACCESS_KEY}
-    BROWSERSTACK_PROJECT_NAME: $(BROWSERSTACK_PROJECT_NAME)
-    BROWSERSTACK_BUILD_NAME: ${BROWSERSTACK_BUILD_NAME}
-    BUILD_NUMBER: ${BUILD_NUMBER}
   displayName: 'Run a multi-line script'
