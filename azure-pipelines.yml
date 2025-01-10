@@ -25,6 +25,7 @@ steps:
     npm i "$(downloadSecureFileStep.secureFilePath)"
     npx browserstack-node-sdk --version
     echo "RUNNING TEST"
+    echo $BROWSERSTACK_USERNAME
     npm run sample-test
   env:
     BROWSERSTACK_USERNAME: $(BROWSERSTACK_USERNAME)
