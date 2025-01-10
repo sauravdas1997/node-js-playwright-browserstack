@@ -21,7 +21,9 @@ steps:
 - script: |
     ls -al
     printenv
-    ls "$(downloadSecureFileStep.secureFilePath)"
+    npm i
+    npm i "$(downloadSecureFileStep.secureFilePath)"
+    npx browserstack-node-sdk --version
   env:
     BROWSERSTACK_USERNAME: $(BROWSERSTACK_USERNAME)
     BROWSERSTACK_ACCESS_KEY: ${BROWSERSTACK_ACCESS_KEY}
